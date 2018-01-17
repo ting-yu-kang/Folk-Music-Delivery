@@ -15,3 +15,6 @@
 	- Microsoft SQL
 - Web server
 	- Microsoft Azure
+
+## Remarks
+- In `Web.config`, the Connection String of the Database remains private.
