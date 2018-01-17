@@ -1,0 +1,338 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/Content/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="/Content/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="/Content/font-awesome/css/font-awesome.min.css" type="text/css" />
+
+    <script src="/Scripts/jquery-2.2.1.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <style>
+        @import url(http://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+        @import url("http://fonts.googleapis.com/css?family=Lato:300,400,900");
+
+        #myCarousel {
+            font-family: 'Lato', 'cwTeXYen', sans-serif;
+        }
+
+            #myCarousel .carousel-caption {
+                left: 0;
+                right: 0;
+                bottom: 0;
+                text-align: left;
+                padding: 10px;
+                background: rgba(0,0,0,0.6);
+                text-shadow: none;
+            }
+
+                #myCarousel .carousel-caption h2 {
+                    margin: 0;
+                }
+
+                #myCarousel .carousel-caption p {
+                    margin-top: 5px;
+                    margin-bottom: 0;
+                    font-size: 1.2em;
+                }
+
+            #myCarousel .list-group {
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+
+            #myCarousel .list-group-item {
+                padding-top: 0;
+                border-radius: 0px;
+                cursor: pointer;
+                text-align: center;
+            }
+
+                #myCarousel .list-group-item h2 {
+                    margin-top: 0;
+                    margin-bottom: 0;
+					font-size: 1.85em;
+                }
+
+                #myCarousel .list-group-item p {
+                    font-size: 1.1em;
+                }
+
+            #myCarousel .list-group .active {
+                background-color: #eee;
+            }
+
+            #myCarousel .carousel-inner .item {
+                cursor: pointer;
+            }
+
+            #myCarousel .item .glyphicon {
+                position: absolute;
+                top: 50%;
+                margin-top: -50px; /* half icon's height */
+                left: 50%;
+                margin-left: -50px; /* half icon's width */
+                z-index: 999;
+                color:#fff;
+                font-size:100px;
+                color:rgba(255,255,255,0.7);
+            }
+
+            #myCarousel .carousel-control.left, #myCarousel .carousel-control.right {
+                width: 10%;
+            }
+
+        @media (max-width: 844px) {
+            #myCarousel .list-group-item h2 {
+                font-size: 1.4em;
+            }
+
+            #myCarousel .list-group-item p {
+                font-size: .85em;
+            }
+        }
+
+        @media (min-width: 761px) {
+            #myCarousel {
+                padding-right: 25%;
+            }
+
+                #myCarousel .carousel-controls {
+                    display: none;
+                }
+        }
+
+        @media (max-width: 760px) {
+            #myCarousel .item .glyphicon {
+                position: absolute;
+                margin-top: -35px; /* half icon's height */
+                margin-left: -35px; /* half icon's width */
+                font-size:70px;
+            }
+
+            #myCarousel .list-group {
+                display: none;
+            }
+
+            #myCarousel .carousel-caption h2 {
+                margin: 0;
+            }
+
+            #myCarousel .carousel-caption p {
+                margin-top: 5px;
+                margin-bottom: 0;
+                font-size: 1.2em;
+            }
+        }
+
+        @media (max-width: 400px) {
+            #myCarousel .carousel-caption h2 {
+                font-size: 1.5em;
+            }
+
+            #myCarousel .carousel-caption p {
+                display: none;
+            }
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            var clickEvent = false;
+            $('#myCarousel').carousel({
+                interval: 4000
+            }).on('click', '.list-group li', function () {
+                clickEvent = true;
+                $('.list-group li').removeClass('active');
+                $(this).addClass('active');
+            }).on('slid.bs.carousel', function (e) {
+                if (!clickEvent) {
+                    var count = $('.list-group').children().length - 1;
+                    var current = $('.list-group li.active');
+                    current.removeClass('active').next().addClass('active');
+                    var id = parseInt(current.data('slide-to'));
+                    if (count == id) {
+                        $('.list-group li').first().addClass('active');
+                    }
+                }
+                clickEvent = false;
+            });
+
+            $('.carousel-inner .item').click(function (event) {
+                parent.$('.swipebox-video.type' + $(this).index()).trigger('click');
+            });
+        });
+
+        $(window).load(function () {
+            var boxheight = $('#myCarousel .carousel-inner').innerHeight();
+            var itemlength = $('#myCarousel .item').length;
+            var triggerheight = Math.round(boxheight / itemlength + 1);
+            $('#myCarousel .list-group-item').outerHeight(triggerheight);
+        });
+
+        $(window).resize(function () {
+            var boxheight = $('#myCarousel .carousel-inner').innerHeight();
+            var itemlength = $('#myCarousel .item').length;
+            var triggerheight = Math.round(boxheight / itemlength + 1);
+            $('#myCarousel .list-group-item').outerHeight(triggerheight);
+        });
+    </script>
+</head>
+<body>
+    <div class="col-xs-12" style="padding:0">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+
+                <div class="item active">
+                    <i class="glyphicon glyphicon-play-circle"></i>
+                    <img src="\images\VideoRecords\友情 - 我愛你.jpg">
+                    <div class="carousel-caption">
+                        <h2>友情 - 我愛你</h2>
+                        <p><i class="fa fa-calendar"></i>&nbsp;2015/05/08&nbsp;&nbsp;<i class="fa fa-user"></i>&nbsp;余宣德 林品宏&nbsp;&nbsp;<i class="fa fa-map-marker"></i>&nbsp;小福廣場</p>
+                    </div>
+                </div><!-- End Item -->
+
+                <div class="item">
+                    <i class="glyphicon glyphicon-play-circle"></i>
+                    <img src="\images\VideoRecords\友情 - 好日子.jpg">
+                    <div class="carousel-caption">
+                        <h2>友情 - 好日子</h2>
+                        <p><i class="fa fa-calendar"></i>&nbsp;2015/05/08&nbsp;&nbsp;<i class="fa fa-user"></i>&nbsp;林芝&nbsp;&nbsp;<i class="fa fa-map-marker"></i>&nbsp;普通101</p>
+                    </div>
+                </div><!-- End Item -->
+
+                <div class="item">
+                    <i class="glyphicon glyphicon-play-circle"></i>
+                    <img src="\images\VideoRecords\愛情 - A thousand Years.jpg">
+                    <div class="carousel-caption">
+                        <h2>愛情 - A thousand Years</h2>
+                        <p><i class="fa fa-calendar"></i>&nbsp;2015/05/07&nbsp;&nbsp;<i class="fa fa-user"></i>&nbsp;張凱翔 賴韻宇&nbsp;&nbsp;<i class="fa fa-map-marker"></i>&nbsp;管二205</p>
+                    </div>
+                </div><!-- End Item -->
+
+                <div class="item">
+                    <i class="glyphicon glyphicon-play-circle"></i>
+                    <img src="\images\VideoRecords\愛情 - Just the way you are.jpg">
+                    <div class="carousel-caption">
+                        <h2>愛情 - Just the way you are</h2>
+                        <p><i class="fa fa-calendar"></i>&nbsp;2015/05/04&nbsp;&nbsp;<i class="fa fa-user"></i>&nbsp;梅傑 張嘉祐&nbsp;&nbsp;<i class="fa fa-map-marker"></i>&nbsp;共同406</p>
+                    </div>
+                </div><!-- End Item -->
+
+                <div class="item">
+                    <i class="glyphicon glyphicon-play-circle"></i>
+                    <img src="\images\VideoRecords\師長 - 張三的歌.jpg">
+                    <div class="carousel-caption">
+                        <h2>師長 - 張三的歌</h2>
+                        <p><i class="fa fa-calendar"></i>&nbsp;2015/05/05&nbsp;&nbsp;<i class="fa fa-user"></i>&nbsp;陳于壹&nbsp;&nbsp;<i class="fa fa-map-marker"></i>&nbsp;秘書室 (陳聰富學務長)</p>
+                    </div>
+                </div><!-- End Item -->
+
+                <div class="item">
+                    <i class="glyphicon glyphicon-play-circle"></i>
+                    <img src="\images\VideoRecords\師長 - 普通朋友.jpg">
+                    <div class="carousel-caption">
+                        <h2>師長 - 普通朋友</h2>
+                        <p><i class="fa fa-calendar"></i>&nbsp;2015/05/08&nbsp;&nbsp;<i class="fa fa-user"></i>&nbsp;蔡宇瀚&nbsp;&nbsp;<i class="fa fa-map-marker"></i>&nbsp;共同310 (洪淑娟老師)</p>
+                    </div>
+                </div><!-- End Item -->
+
+                <div class="item">
+                    <i class="glyphicon glyphicon-play-circle"></i>
+                    <img src="\images\VideoRecords\銃康 - 我的滑板鞋.jpg">
+                    <div class="carousel-caption">
+                        <h2>銃康 - 我的滑板鞋</h2>
+                        <p><i class="fa fa-calendar"></i>&nbsp;2015/05/04&nbsp;&nbsp;<i class="fa fa-user"></i>&nbsp;朱瑤章 張達元&nbsp;&nbsp;<i class="fa fa-map-marker"></i>&nbsp;博雅102</p>
+                    </div>
+                </div><!-- End Item -->
+
+                <div class="item">
+                    <i class="glyphicon glyphicon-play-circle"></i>
+                    <img src="\images\VideoRecords\銃康 - 買你.jpg">
+                    <div class="carousel-caption">
+                        <h2>銃康 - 買你</h2>
+                        <p><i class="fa fa-calendar"></i>&nbsp;2015/05/08&nbsp;&nbsp;<i class="fa fa-user"></i>&nbsp;潘信佑 孫榕&nbsp;&nbsp;<i class="fa fa-map-marker"></i>&nbsp;化學系A210</p>
+                    </div>
+                </div><!-- End Item -->
+
+                <div class="item">
+                    <i class="glyphicon glyphicon-play-circle"></i>
+                    <img src="\images\VideoRecords\另類 - 好日子.jpg">
+                    <div class="carousel-caption">
+                        <h2>另類 - 好日子</h2>
+                        <p><i class="fa fa-calendar"></i>&nbsp;2015/05/06&nbsp;&nbsp;<i class="fa fa-user"></i>&nbsp;許睿修 許微芊&nbsp;&nbsp;<i class="fa fa-map-marker"></i>&nbsp;醉月湖 (大樹)</p>
+                    </div>
+                </div><!-- End Item -->
+
+                <div class="item">
+                    <i class="glyphicon glyphicon-play-circle"></i>
+                    <img src="\images\VideoRecords\另類 - 召喚獸.jpg">
+                    <div class="carousel-caption">
+                        <h2>另類 - 召喚獸</h2>
+                        <p><i class="fa fa-calendar"></i>&nbsp;2015/05/04&nbsp;&nbsp;<i class="fa fa-user"></i>&nbsp;蘇冠中 李佳縉&nbsp;&nbsp;<i class="fa fa-map-marker"></i>&nbsp;鹿鳴堂 (第一棵樹)</p>
+                    </div>
+                </div><!-- End Item -->
+
+            </div><!-- End Carousel Inner -->
+
+
+            <ul class="list-group col-sm-3">
+                <li data-target="#myCarousel" data-slide-to="0" class="list-group-item active">
+                    <h2>Friend</h2>
+                    <p>我愛你</p>
+                </li>
+                <li data-target="#myCarousel" data-slide-to="1" class="list-group-item">
+                    <h2>Friend</h2>
+                    <p>好日子</p>
+                </li>
+                <li data-target="#myCarousel" data-slide-to="2" class="list-group-item">
+                    <h2>Lover</h2>
+                    <p>A thousand Years</p>
+                </li>
+                <li data-target="#myCarousel" data-slide-to="3" class="list-group-item">
+                    <h2>Lover</h2>
+                    <p>Just the way you are</p>
+                </li>
+                <li data-target="#myCarousel" data-slide-to="4" class="list-group-item">
+                    <h2>Teacher</h2>
+                    <p>張三的歌</p>
+                </li>
+                <li data-target="#myCarousel" data-slide-to="5" class="list-group-item">
+                    <h2>Teacher</h2>
+                    <p>普通朋友</p>
+                </li>
+                <li data-target="#myCarousel" data-slide-to="6" class="list-group-item">
+                    <h2>Prank</h2>
+                    <p>我的滑板鞋</p>
+                </li>
+                <li data-target="#myCarousel" data-slide-to="7" class="list-group-item">
+                    <h2>Prank</h2>
+                    <p>買你</p>
+                </li>
+                <li data-target="#myCarousel" data-slide-to="8" class="list-group-item">
+                    <h2>Other</h2>
+                    <p>好日子</p>
+                </li>
+                <li data-target="#myCarousel" data-slide-to="9" class="list-group-item">
+                    <h2>Other</h2>
+                    <p>召喚獸</p>
+                </li>
+            </ul>
+
+            <!-- Controls -->
+            <div class="carousel-controls">
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </div>
+
+        </div><!-- End Carousel -->
+    </div>
+</body>
+</html>

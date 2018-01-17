@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GetTeamOrder.aspx.cs" Inherits="NTUGTLoveCarrier.API.GetTeamOrder" %>

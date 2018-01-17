@@ -1,0 +1,50 @@
+﻿@import url("http://fonts.googleapis.com/css?family=Lato:300,400,900");
+@import url(http://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+
+.navbar-fixed-top {
+    padding: 0;
+}
+
+    .navbar-fixed-top .navbar-brand {
+        font-size: 1.8em;
+    }
+
+@media only screen and (max-width: 480px) {
+    .navbar-fixed-top .navbar-brand {
+        font-size: 1.5em;
+    }
+}
+
+.navbar {
+    text-transform: uppercase;
+    font-family: 'Lato','cwTeXYen', '微軟正黑體';
+    letter-spacing: 1px;
+}
+
+    .navbar a:focus {
+        outline: 0;
+    }
+
+    .navbar .navbar-nav {
+        letter-spacing: 1px;
+        font-size: 1.6em;
+    }
+
+        .navbar .navbar-nav li li {
+            letter-spacing: 1px;
+            font-size: 1.5em;
+        }
+
+        .navbar .navbar-nav li a:focus {
+            outline: 0;
+        }
+
+.navbar-default,
+.navbar-inverse {
+    border: 0;
+}
+
+nav .container {
+    padding: 0 2em;
+    width: 100%;
+}

@@ -1,0 +1,338 @@
+﻿@import url(http://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+@import url(https://fonts.googleapis.com/css?family=Slabo+27px);
+
+body {
+    font-family: 'Slabo 27px', 'cwTeXYen','微軟正黑體', sans-serif;
+}
+
+.description {
+    letter-spacing: 2px;
+    border-bottom: 1px solid rgba(0, 0, 0,0.1);
+    padding-bottom: 5px;
+}
+
+.profile {
+    margin-top: 25px;
+}
+
+    .profile h1 {
+        font-weight: normal;
+        font-size: 1.8em;
+        margin: 10px 0 0 0;
+    }
+
+    .profile h2 {
+        font-size: 1.5em;
+        font-weight: lighter;
+        margin-top: 5px;
+    }
+
+@media only screen and (max-width: 480px) {
+    .profile {
+        padding: 0 1.2em;
+    }
+}
+
+.profile .img-box {
+    opacity: 1;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    border: none;
+    z-index: 1;
+    cursor: pointer;
+    -webkit-box-shadow: 2px 2px 9px 2px rgba(0,0,0,0.57);
+    -moz-box-shadow: 2px 2px 9px 2px rgba(0,0,0,0.57);
+    box-shadow: 2px 2px 9px 2px rgba(0,0,0,0.57);
+}
+
+    .profile .img-box img {
+        z-index: 0;
+        width: 100%;
+        height: auto;
+        transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+        -o-transition: all 0.5s;
+    }
+
+    .profile .img-box:hover img {
+        transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        -o-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        height: auto;
+    }
+
+    .profile .img-box span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        visibility: hidden;
+        height: 100%;
+        width: 100%;
+        background-color: #000;
+        opacity: 0;
+        transition: opacity .25s ease-out;
+        -moz-transition: opacity .25s ease-out;
+        -webkit-transition: opacity .25s ease-out;
+        -o-transition: opacity .25s ease-out;
+    }
+
+    .profile .img-box:hover span {
+        display: block;
+        visibility: visible;
+        opacity: 0.4;
+        -moz-opacity: 0.4;
+        -webkit-opacity: 0.4;
+    }
+
+        .profile .img-box:hover span i {
+            position: absolute;
+            top: 43%;
+            left: 0%;
+            width: 100%;
+            font-size: 2em;
+            color: #fff !important;
+            text-align: center;
+            opacity: 1;
+            -moz-opacity: 1;
+            -webkit-opacity: 1;
+        }
+
+/*team info modal*/
+#TeamInfo div.col-sm-6 {
+    padding: 0 6px;
+}
+
+#TeamInfo p.pull-right {
+    font-size: 1.2em;
+}
+
+
+#TeamInfo fieldset {
+    border: 5px;
+    margin: 0 0px 10px 0px;
+    padding: 10px 10px;
+    background: #EFEFEF;
+    border-radius: 10px;
+}
+
+    #TeamInfo fieldset legend {
+        width: auto;
+        padding: 1.5px 8px 0px 8px;
+        margin: 5px;
+        background-color: #4F709F;
+        color: #FFF;
+        border-radius: 5px;
+    }
+/*Team Detail*/
+
+#TeamDetail {
+    max-width: 350px;
+    margin: auto;
+}
+
+    #TeamDetail p {
+        font-size: 1.3em;
+    }
+
+@media only screen and (max-width: 360px) { /*i5*/
+    #TeamDetail h2.SongName {
+        font-size: 20px;
+    }
+
+    #TeamDetail h3 {
+        font-size: 19px;
+    }
+
+    #TeamDetail h4 {
+        font-size: 17px;
+    }
+
+    #SongPickerDiv h2.songName {
+        font-size: 19px;
+    }
+
+    #SongPickerDiv h4.originalSinger {
+        font-size: 16px;
+    }
+
+    #SongPickerDiv .category{
+        margin-top:5px;
+    }
+
+    #SongPickerDiv .category span.label {
+        font-size: 12px;
+    }
+}
+
+/*Carousel*/
+#TeamPhotoCarousel {
+    max-width: 350px;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    border-radius: 15px;
+    z-index: 1;
+    margin: auto;
+    -webkit-box-shadow: 2px 2px 9px 2px rgba(0,0,0,0.57);
+    -moz-box-shadow: 2px 2px 9px 2px rgba(0,0,0,0.57);
+    box-shadow: 2px 2px 9px 2px rgba(0,0,0,0.57);
+}
+
+    #TeamPhotoCarousel .carousel-indicators {
+        bottom: 0px;
+        z-index:998;
+    }
+
+    #TeamPhotoCarousel .carousel-control {
+        z-index:999;
+    }
+
+    #TeamPhotoCarousel .item {
+        background: #333;
+        text-align: center;
+    }
+
+        #TeamPhotoCarousel .item img {
+            width: 100%;
+        }
+
+#TeamDetail h3 {
+    font-size:22px;
+}
+/*time table*/
+#TimeTableDiv .label {
+    padding: 4px 8px;
+    font-weight: 600;
+}
+
+#TimeTableDiv .label-danger {
+    background-color: #e74c3c;
+}
+
+#TimeTable {
+    border-collapse: separate;
+    border-radius: 15px;
+}
+
+    #TimeTable td, #TimeTable th {
+        text-align: center;
+        vertical-align: middle;
+        border: solid 1px #807985;
+        font: #807985;
+        background-color: #FFFFF5;
+    }
+
+    #TimeTable tr {
+        height: 40px;
+    }
+
+        #TimeTable tr th {
+            background-color: #FFFFEB;
+        }
+
+            #TimeTable tr th a, #TimeTable tr td a {
+                color: #000000;
+            }
+
+        #TimeTable tr:first-child th:first-child {
+            border-top-left-radius: 15px;
+        }
+
+        #TimeTable tr:first-child th:last-child {
+            border-top-right-radius: 15px;
+        }
+
+        #TimeTable tr:last-child td:first-child {
+            border-bottom-left-radius: 15px;
+        }
+
+        #TimeTable tr:last-child td:last-child {
+            border-bottom-right-radius: 15px;
+        }
+
+        #TimeTable tr td:first-child, #TimeTable tr th:first-child {
+            background-color: #FFFFEB;
+            width: 10px;
+        }
+
+        #TimeTable tr td:not(:first-child), #TimeTable tr th:not(:first-child) {
+            width: 50px;
+        }
+
+    #TimeTable .btn {
+        padding: 2.5px 8px 1px 8px;
+        border: none;
+        font-weight: 600;
+    }
+
+/*song picker*/
+
+#SongPickerDiv .song-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    color: rgb(75, 77, 78);
+}
+
+#SongPickerDiv .song-container {
+    padding: 0px 40px;
+}
+
+#SongPickerDiv h2, .song-picker h4 {
+    margin: 0px;
+    padding: 0px;
+    /*font-family: 'Roboto', sans-serif;*/
+}
+
+#SongPickerDiv .songName {
+    text-align: center;
+    font-size: 24px;
+}
+
+#SongPickerDiv .category {
+    text-align: center;
+    padding: 0;
+    font-size: 18px;
+}
+
+    #SongPickerDiv .category .label {
+        font-size: 1em;
+        padding: 2px 5px;
+        margin: 0 2px;
+    }
+
+#SongPickerDiv .songCount {
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: 19px;
+    font-size: 1.2em !important;
+}
+
+#SongPickerDiv .originalSinger {
+    margin: -6px 0 0px -10px;
+    font-size: 20px;
+}
+
+#SongPickerDiv span.fa {
+    position: absolute;
+    font-size: 4em;
+    font-weight: 100;
+    cursor: pointer;
+    top: 0px;
+}
+
+    #SongPickerDiv span.fa[data-type="subtract"] {
+        left: 5px;
+        top: 55px;
+    }
+
+    #SongPickerDiv span.fa[data-type="add"] {
+        right: 5px;
+        top: 55px;
+    }

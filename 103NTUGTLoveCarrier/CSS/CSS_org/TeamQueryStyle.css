@@ -1,0 +1,66 @@
+﻿/*time table*/
+#TimeTableDiv .label {
+    padding: 4px 8px;
+    font-weight: 600;
+}
+
+#TimeTableDiv .label-danger {
+    background-color: #e74c3c;
+}
+
+#TimeTable {
+    border-collapse: separate;
+    border-radius: 15px;
+}
+
+    #TimeTable td, #TimeTable th {
+        text-align: center;
+        vertical-align: middle;
+        border: solid 1px #807985;
+        font: #807985;
+        background-color: #FFFFF5;
+    }
+
+    #TimeTable tr {
+        height: 40px;
+    }
+
+        #TimeTable tr th {
+            background-color: #FFFFEB;
+        }
+
+            #TimeTable tr th a, #TimeTable tr td a {
+                color: #000000;
+                text-decoration: none;
+            }
+
+        #TimeTable tr:first-child th:first-child {
+            border-top-left-radius: 15px;
+        }
+
+        #TimeTable tr:first-child th:last-child {
+            border-top-right-radius: 15px;
+        }
+
+        #TimeTable tr:last-child td:first-child {
+            border-bottom-left-radius: 15px;
+        }
+
+        #TimeTable tr:last-child td:last-child {
+            border-bottom-right-radius: 15px;
+        }
+
+        #TimeTable tr td:first-child, #TimeTable tr th:first-child {
+            background-color: #FFFFEB;
+            width: 10px;
+        }
+
+        #TimeTable tr td:not(:first-child), #TimeTable tr th:not(:first-child) {
+            width: 50px;
+        }
+
+    #TimeTable .btn {
+        padding: 2.5px 8px 1px 8px;
+        border: none;
+        font-weight: 600;
+    }

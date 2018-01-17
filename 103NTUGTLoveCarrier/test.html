@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="/CSS/slidebars.min.css">
+
+    <script src="/scripts/bootstrap.min.js"></script>
+    <script src="/scripts/slidebars.min.js"></script>
+    
+    <script>
+        (function ($) {
+            $(document).ready(function () {
+                $.slidebars({
+                    //siteClose: true, // true or false
+                    //disableOver: 480, // integer or false
+                    hideControlClasses: true, // true or false
+                    scrollLock: false // true or false
+                });
+            });
+        })(jQuery);
+    </script>
+</head>
+<body>
+    <div id="sb-site">
+        <!-- Your main site content. -->
+    </div>
+    <div class="sb-slidebar sb-left">
+        <!-- Your left Slidebar content. -->
+    </div>
+</body>
+</html>
